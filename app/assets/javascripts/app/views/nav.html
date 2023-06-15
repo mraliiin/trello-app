@@ -1,0 +1,35 @@
+<div class="md-toolbar-tools">
+    <div layout="row" flex="" class="fill-height">
+        <div flex>
+            <h2>
+        <a ui-sref="boards">Trello app</a>
+      </h2>
+        </div>
+
+        <div class="md-toolbar-item md-breadcrumb">
+            <h6>
+        <span ng-show="signedIn()">
+        </span>
+        <span ng-show="signedIn()">
+          <a ng-href="#/users/{{ user.profile.uid }}">
+            <img ng-src="http://www.gravatar.com/avatar/{{ user.profile.md5_hash }}" class="user-thumbnail">
+          </a>
+        </span>
+        <span ng-hide="signedIn()">
+          <a href="#/login">Login</a>
+        </span>
+        <span>
+            &nbsp;
+        </span>
+        <span ng-show="signedIn()">
+          <md-button class="" ng-click="logout()">
+            Log Out
+          </md-button>
+        </span>
+        <span ng-hide="signedIn()">
+          <a href="#/register">Register</a>
+        </span>
+      </h6>
+        </div>
+    </div>
+</div>

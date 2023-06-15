@@ -1,0 +1,33 @@
+<section layout="column" flex layout-align="center center" class="login">
+    <md-card class="md-whiteframe-4dp authenticate-card">
+        <md-toolbar>
+            <div layout="column" layout-padding layout-align="center center">
+                <div class="md-headline md-padding">Register</div>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <form ng-submit="register()" name="registerForm">
+                <input type="hidden" id="authenticity_token" name="authenticity_token" value="<%= form_authenticity_token %>" />
+
+                <md-input-container class="md-block">
+                    <label>Username</label>
+                    <input type="text" ng-model="user.username" ng-required="true">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input type="email" ng-model="user.email" ng-required="true">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input type="password" ng-model="user.password" ng-required="true" ng-minlength="6">
+                </md-input-container>
+
+                <div layout="row" layout-align="center center">
+                    <md-button type="submit" ng-disabled="registerForm.$invalid" class="md-raised md-accent" flex="50">Register</md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</section>

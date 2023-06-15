@@ -1,0 +1,44 @@
+.application-container {
+    margin-top: 60px;
+    min-height: 500px;
+}
+
+[data-ng-click],
+[ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+.user-thumbnail {
+    height: 40px;
+    width: 40px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #FFF;
+}
+
+md-card {
+    background-color: rgb(255,255,255);
+}
+
+.authenticate-card {
+    width: 400px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.app-dialog {
+    width: 400px;
+    max-width: 90%;
+
+    input {
+        width: 90%;
+        margin: 20px auto;
+    }
+}

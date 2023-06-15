@@ -1,0 +1,54 @@
+<section>
+    <div layout-fill layout-align="space-around center" layout-padding layout-margin>
+        <div class="row">
+            <h3>
+                <span class="glyphicon glyphicon-folder-open"></span>
+                {{board.name}}
+             </h3>
+        </div>
+
+        <md-button class="md-primary md-raised new-column-button" ng-click="createListDialog(list)">
+            New column
+        </md-button>
+    </div>
+
+    <div layout-fill layout-align="center" ng-show="!lists || !lists.length" class="jumbotron text-center">
+        <div>No columns yet. Start by adding a new column</div>
+    </div>
+
+    <div layout="row" class="board" flex sv-root sv-on-sort="onListOrderChange($item, $indexTo)" sv-part="lists">
+        <md-card class="board-column" sv-element ng-repeat="list in lists"
+                ng-mouseleave="list.editMode = false"
+                ng-mouseenter="list.editMode = true">
+            <md-toolbar class="md-accent board-column-header" sv-handle>
+                <div class="md-toolbar-tools">
+                    <span>{{list.name}}</span>
+                </div>
+
+                <div ng-show="list.editMode" ng-click="removeList(list)" class="remove-list-btn">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+            </md-toolbar>
+
+
+            <!-- Cards associated to a list -->
+            <ul ui-sortable="sortableOptions" ui-sortable-stop="updateCardPosition" id="{{list.id}}" class="cards-list" ng-model="list.cards">
+                <li ng-repeat="card in list.cards" class="list-card app" id="{{card.id}}"
+                        ng-mouseleave="card.editMode = false"
+                        ng-mouseenter="card.editMode = true">
+                    <span>
+                        #{{card.id}} {{card.title}}
+                    </span>
+
+                    <div ng-show="card.editMode" ng-click="removeCard(list, card)" class="remove-card-btn">
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                    </div>
+                </li>
+            </ul>
+
+            <span ng-click="createCardDialog(list)" class="new-card-button" title="Add new card">
+                <span class="glyphicon glyphicon-plus"></span>
+            </span>
+        </md-card>
+    </div>
+</section>

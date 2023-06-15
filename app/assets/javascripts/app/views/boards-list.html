@@ -1,0 +1,46 @@
+<div id="board" layout="column" flex>
+    <div layout-fill layout-align="space-around center" layout-padding layout-margin>
+        <h3>My boards</h3>
+    </div>
+
+    <div layout="row" flex layout-wrap>
+        <md-card flex-gt-xs="25" flex-xs="100">
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    New Board
+                </div>
+            </md-toolbar>
+
+            <md-content layout-padding>
+                <form ng-submit="addBoard()" layout-align="space-around center">
+                    <md-input-container>
+                        <label>Name</label>
+                        <input type="text" ng-required ng-model="board.name">
+                    </md-input-container>
+                    <md-button class="md-primary md-raised" type="submit">
+                        Add Board
+                    </md-button>
+                </form>
+            </md-content>
+        </md-card>
+    </div>
+
+    <div layout-fill layout-align="center" ng-show="!boards || !boards.length" class="jumbotron text-center">
+        <div>No boards yet. Start by adding a new column</div>
+    </div>
+
+    <div class="row" ng-if="boards.length > 0">
+        <div class="col-xs-12 col-sm-4" ng-repeat="board in boards">
+            <md-card ng-click="gotoBoard(board.id)" ng-mouseleave="board.editMode = false" ng-mouseenter="board.editMode = true">
+                <md-toolbar class="md-accent">
+                    <div class="md-toolbar-tools">
+                        <a>{{board.name}}</a>
+                    </div>
+                    <div ng-show="true" ng-click="removeBoard(board); $event.stopPropagation();" class="remove-board-btn">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </div>
+                </md-toolbar>
+            </md-card>
+        </div>
+    </div>
+</div>

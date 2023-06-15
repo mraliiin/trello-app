@@ -1,0 +1,16 @@
+<md-dialog class="app-dialog">
+    <md-toolbar>
+        <div class="md-toolbar-tools" layout="row">
+            <div flex></div>
+            <h4>New List</h4>
+            <div flex></div>
+        </div>
+    </md-toolbar>
+
+    <md-content>
+        <form ng-submit="addList()">
+            <input type="text" class="form-control" ng-model="list.name" required placeholder="List name">
+            <md-button type="submit" class="md-primary md-raised">Add List</md-button>
+        </form>
+    </md-content>
+</md-dialog>

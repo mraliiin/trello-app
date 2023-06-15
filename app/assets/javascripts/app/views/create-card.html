@@ -1,0 +1,16 @@
+<md-dialog class="app-dialog">
+    <md-toolbar>
+        <div class="md-toolbar-tools" layout="row">
+            <div flex></div>
+            <h4>New Card</h4>
+            <div flex></div>
+        </div>
+    </md-toolbar>
+
+    <md-content>
+        <form ng-submit="createCard(card.list)">
+            <input type="text" class="form-control" ng-model="card.title" ng-required placeholder="Title">
+            <md-button type="submit" class="md-raised md-primary" flex="100">Save</md-button>
+        </form>
+    </md-content>
+</md-dialog>

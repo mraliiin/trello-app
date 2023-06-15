@@ -1,0 +1,25 @@
+{
+  "name": "trello.app",
+  "version": "1.0.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-ui-router": "^0.4.2",
+    "angular-material": "^1.1.4",
+    "toastr": "^2.1.3",
+    "font-awesome": "^4.7.0",
+    "angular-cookies": "^1.6.6",
+    "angular-ui-sortable": "^0.17.2",
+    "AngularDevise": "angular-devise#^1.3.0"
+  },
+  "resolutions": {
+    "jquery": ">=1.6"
+  }
+}
